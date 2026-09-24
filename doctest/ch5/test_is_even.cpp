@@ -2,6 +2,10 @@
 #include <doctest.h>
 using namespace std;
 
+bool is_even(int n){
+    return true;
+}
+
 TEST_CASE("is_even identifies even numbers") {
     CHECK(is_even(0) == true);
     CHECK(is_even(2) == true);

@@ -3,7 +3,7 @@
 using namespace std;
 
 int sum_to_n(int n){
-    return 1;
+    return n * (n + 1) / 2;
 }
 
 TEST_CASE("sum_to_n(int n) returns sum of integers from 1 to n") {

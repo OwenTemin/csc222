@@ -2,6 +2,10 @@
 #include <doctest.h>
 using namespace std;
 
+int find_largest(int n1, int n2){
+    return 5;
+    }
+
 TEST_CASE("find_largest returns the greater of two integers") {
     CHECK(find_largest(6, 19) == 19);
     CHECK(find_largest(6, 1) == 6);

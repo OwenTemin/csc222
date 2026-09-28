@@ -4,7 +4,9 @@ using namespace std;
 
 int count_digits(int n){
     int amount = 0;
-
+    if (n == 0){
+        return 1;
+    }
     while (n != 0){
         amount +=1;
         n /= 10;

@@ -3,15 +3,15 @@
 using namespace std;
 
 bool is_prime(int n){
-    int count = 1;
-    while (count < n){
-        if (n % n == 0 && n != 1){
-            return false;
-        }
-        count++;
+    if (n <= 1) return false;
+
+    if (n <= 3) return true;
+
+    for (int i = 2; i < n; i++){
+        if (n % i == 0) return false;
     }
     return true;
-}
+    }
 
 TEST_CASE("is_prime(int n) returns true if n is a prime number") {
     CHECK(is_prime(0) == false);

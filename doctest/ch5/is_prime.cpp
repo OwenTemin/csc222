@@ -3,7 +3,14 @@
 using namespace std;
 
 bool is_prime(int n){
-    return false;
+    int count = 1;
+    while (count < n){
+        if (n % n == 0 && n != 1){
+            return false;
+        }
+        count++;
+    }
+    return true;
 }
 
 TEST_CASE("is_prime(int n) returns true if n is a prime number") {

@@ -3,7 +3,17 @@
 #include <doctest.h>
 using namespace std;
 
+void convert_to_lowercase(string& word){
+    for (char& c : word){
+        if (c >= 'A' && c <= 'Z'){
+            c += 32;
+        }
+    }
+}
+
 int count_vowels(string word){
+    convert_to_lowercase(word);
+
     int total = 0;
     string vowels = "aeiou";
 

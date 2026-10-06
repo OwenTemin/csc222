@@ -4,7 +4,12 @@
 using namespace std;
 
 string reverse_string(string word){
-    return "yppah";
+    string final;
+    for (int i = word.length() - 1; i!= -1; i--){
+        char letter = word[i];
+        final.push_back(letter);
+    }
+    return final;
 }
 TEST_CASE("reverse_string(s) returns s backwards") {
     CHECK(reverse_string("happy") == "yppah");

@@ -13,6 +13,6 @@ string reverse_string(string word){
 }
 TEST_CASE("reverse_string(s) returns s backwards") {
     CHECK(reverse_string("happy") == "yppah");
-/*    CHECK(reverse_string("GHC!") == "!CHG");
-    CHECK(reverse_string("The end.") == ".dne ehT"); */
+    CHECK(reverse_string("GHC!") == "!CHG");
+    CHECK(reverse_string("The end.") == ".dne ehT"); 
     }

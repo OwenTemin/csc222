@@ -4,8 +4,10 @@
 using namespace std;
 
 int count_words(string words){
-    return 0;
+    if (words.length() == 0) return 0;
+    else return 1;
 }
+
 TEST_CASE("count_words counts words") {
     CHECK(count_words("") == 0);
 /*    CHECK(count_words("Word!") == 1);

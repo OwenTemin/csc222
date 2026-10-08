@@ -14,6 +14,6 @@ string shout(string input){
 }
 TEST_CASE("shout turns an exclaimation into a demand") {
     CHECK(shout("Don't touch that.") == "DON'T TOUCH THAT!");
-/*    CHECK(shout("Let's go.") == "LET'S GO!");
-    CHECK(shout("Leave it there!") == "LEAVE IT THERE!");*/
+    CHECK(shout("Let's go.") == "LET'S GO!");
+/*    CHECK(shout("Leave it there!") == "LEAVE IT THERE!");*/
 }

@@ -16,6 +16,6 @@ int count_words(string words){
 TEST_CASE("count_words counts words") {
     CHECK(count_words("") == 0);
     CHECK(count_words("Word!") == 1);
-/*    CHECK(count_words("Thing1 and Thing2") == 3);
-    CHECK(count_words("This is the song that never ends.") == 7);*/
+    CHECK(count_words("Thing1 and Thing2") == 3);
+    CHECK(count_words("This is the song that never ends.") == 7);
 }

@@ -1,27 +1,68 @@
 #include <iostream>
 #include <random>
+using namespace std;
 
-void manualShuffle(int arr[], size_t n) {
+void shuffle(int arr[], int size) {
     std::random_device rd;
-    std::mt19937 g(rd());
+    std::mt19937 gen(rd());
 
-    // Loop backward and swap each element with a random previous element
-    for (size_t i = n - 1; i > 0; --i) {
-        // Create a distribution from index 0 to i
-        std::uniform_int_distribution<size_t> dist(0, i);
-        size_t j = dist(g);
+    for (int i = size - 1; i > 0; --i) {
+        std::uniform_int_distribution<int> dist(0, i);
+        int j = dist(gen);
 
-        // Swap the elements
-        std::swap(arr[i], arr[j]);
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
 
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    size_t n = sizeof(arr) / sizeof(arr[0]);
+int* shuffle_pure(const int arr[], int size) {
+    int* shuffled_arr = new int[size];
+    
+    for (int i = 0; i < size; ++i) {
+        shuffled_arr[i] = arr[i];
+    }
 
-    manualShuffle(arr, n);
+    std::random_device rd;
+    std::mt19937 gen(rd());
 
-    for (int x : arr) std::cout << x << " ";
-    return 0;
+    for (int i = size - 1; i > 0; --i) {
+        std::uniform_int_distribution<int> dist(0, i);
+        int j = dist(gen);
+
+        int temp = shuffled_arr[i];
+        shuffled_arr[i] = shuffled_arr[j];
+        shuffled_arr[j] = temp;
+    }
+
+    return shuffled_arr;
+}
+
+void printArray(int arr[], int size){
+    for (int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main(){
+    int size = 5;
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    cout << "Original Array: ";
+    printArray(arr, size);
+
+    cout << "Pure Function: ";
+    int* resultPure = shuffle_pure(arr, size);
+
+    cout << "Shuffled Array: ";
+    printArray(resultPure, size);
+
+    cout << "Modifier Function: ";
+    shuffle(arr, size);
+
+    std::cout << "Original Array new version:: ";
+    printArray(arr, size);
+    
+
+    
 }
